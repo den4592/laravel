@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TaskController;
 
 
 /*
@@ -16,3 +18,11 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/',[HomeController::class, 'index']);
+
+Route::get('/projects',[ProjectController::class,'index']);
+
+Route::get('/tasks',[TaskController::class,'index']);
+
+Route::get('/tasks/create',[TaskController::class,'create']);
+
+Route::post('/tasks',[TaskController::class,'store']);
